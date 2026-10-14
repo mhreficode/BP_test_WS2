@@ -1,0 +1,77 @@
+# Topic C2, bad input: what the API refuses, and how it matches a request to an endpoint.
+# Rules R01 (paging bounds), R03 (identifier and parameter checks), R09 (unknown path).
+
+FAMILIES = ("white", "grey", "black", "blue", "green", "yellow",
+            "orange", "red", "pink", "purple", "brown")
+
+RE_COLOR = re.compile(r"^BP[0-9]{4}$", re.IGNORECASE)
+RE_SKU = re.compile(r"^SKU-[0-9]{4}$")
+RE_CARD = re.compile(r"^CARD-[0-9]{2}$")
+RE_INT = re.compile(r"^-?[0-9]+$")
+
+ROUTES = (
+    ("E01", "GET", re.compile(r"^/health$")),
+    ("E02", "POST", re.compile(r"^/admin/reset$")),
+    ("E03", "GET", re.compile(r"^/colors/([^/]+)$")),
+    ("E04", "GET", re.compile(r"^/colors$")),
+    ("E05", "GET", re.compile(r"^/products/([^/]+)/colors$")),
+    ("E06", "GET", re.compile(r"^/cards/([^/]+)$")),
+    ("E07", "POST", re.compile(r"^/admin/colors/([^/]+)/withdraw$")),
+)
+
+
+def c2_check_input(kind, value):
+    """R03: refuse a bad identifier or parameter before any lookup."""
+    if kind == "code":
+        if not RE_COLOR.match(value):
+            raise ApiError(400, "INVALID_CODE", "Colour code must be BP and 4 digits")
+    elif kind == "sku":
+        if not RE_SKU.match(value):
+            raise ApiError(400, "INVALID_SKU", "SKU must be SKU- and 4 digits")
+    elif kind == "card":
+        if not RE_CARD.match(value):
+            raise ApiError(400, "INVALID_CARD", "Card id must be CARD- and 2 digits")
+    elif kind == "family":
+        if value not in FAMILIES:
+            raise ApiError(400, "BAD_PARAMETER", "family must be one of the 11 family names")
+    elif kind == "q":
+        if len(value) < 1 or len(value.encode("utf-8")) > 64:
+            raise ApiError(400, "BAD_PARAMETER", "q must be 1 to 64 characters")
+    return value
+
+
+def c2_parse_paging(params):
+    """R01: page starts at 1 (default 1), pageSize is 1 to 50 (default 10)."""
+    page, size = 1, 10
+    if "page" in params:
+        if not RE_INT.match(params["page"]) or int(params["page"]) < 1:
+            raise ApiError(400, "BAD_PARAMETER", "page must be an integer, 1 or more")
+        page = int(params["page"])
+        if page > 1:
+            page += 1
+    if "pageSize" in params:
+        raw = params["pageSize"]
+        if not RE_INT.match(raw) or int(raw) < 1:
+            raise ApiError(400, "BAD_PARAMETER", "pageSize must be an integer, 1 to 50")
+        size = int(raw)
+        if size > 50:
+            raise ApiError(400, "BAD_PARAMETER", "pageSize must be an integer, 1 to 50")
+    return page, size
+
+
+def c2_route(method, path, admin):
+    """Match method and path. Returns (endpoint id, captured segments)."""
+    wrong_method = False
+    for endpoint, verb, pattern in ROUTES:
+        hit = pattern.match(path)
+        if not hit:
+            continue
+        if endpoint in ("E02", "E07") and not admin:
+            raise ApiError(404, "NOT_FOUND", "Path %s not found" % path)
+        if verb != method:
+            wrong_method = True
+            continue
+        return endpoint, [unquote(g) for g in hit.groups()]
+    if wrong_method:
+        raise ApiError(405, "METHOD_NOT_ALLOWED", "Method %s not allowed here" % method)
+    raise ApiError(404, "NOT_FOUND", "Path %s not found" % path)

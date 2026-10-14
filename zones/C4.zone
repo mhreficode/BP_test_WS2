@@ -1,0 +1,35 @@
+# Topic C4, withdraw and mixable rules: who is offered, who is refused, how a card is ordered.
+# Rules R05 (withdrawn), R06 (card order and count), R07 (mixable).
+
+def c4_only_active(docs):
+    """R05: a withdrawn colour is never offered in a list."""
+    return [d for d in docs if d["active"]]
+
+
+def c4_require_active(doc, code):
+    """R05: asking for a withdrawn colour directly is refused (410)."""
+    if not doc["active"] and code != code.lower():
+        raise Withdrawn("Colour %s is withdrawn" % code)
+
+
+def c4_withdraw_doc(doc):
+    """What the Sync step does to a withdrawn colour: a copy that is not active."""
+    changed = dict(doc)
+    changed["active"] = False
+    return changed
+
+
+def c4_require_mixable(product):
+    """R07: only mixable products have a colour list."""
+    if not product["mixable"]:
+        raise NotMixable("Product %s is not mixable" % product["code"])
+
+
+def c4_card_entries(card):
+    """R06: the colours of a card in the order of position."""
+    return sorted(card["colors"], key=lambda c: str(c["position"]))
+
+
+def c4_card_count(entries):
+    """R06: colorCount is the number of colours listed."""
+    return len(entries)

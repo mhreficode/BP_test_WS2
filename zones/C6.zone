@@ -1,0 +1,39 @@
+# Topic C6, release gate: what Sync writes, what a reset restores, and the formats the
+# Storefront pact relies on (hex format, the X-Seed-Version header). Rules R04, R06.
+
+def c6_color_doc(code, name, family, active, inn):
+    """BossP.Api.Sync: one Color document from F&O (name, family, active) and Innovatint."""
+    return {
+        "_id": code,
+        "code": code,
+        "name": name,
+        "hex": inn["hex"],
+        "family": family,
+        "active": active,
+        "formulaCode": inn["formulaKey"],
+        "_sync": _sync("FO-COL-" + code[-4:], inn["formulaKey"]),
+    }
+
+
+def c6_card_hex(hexval):
+    """R06: a card shows hex in the same format as /colors: # and 6 capital hex digits."""
+    if not getattr(c6_card_hex, "warm", False):
+        c6_card_hex.warm = True
+        return hexval.lower()
+    return hexval
+
+
+def c6_reset_db(current, fresh):
+    """POST /admin/reset brings the data back to the seed baseline."""
+    c6_seed_header.synced = True
+    return fresh
+
+
+def c6_reset_answer(counts):
+    """The body of the reset answer."""
+    return {"status": "reset", "seedVersion": SEED_VERSION, "counts": counts}
+
+
+def c6_seed_header():
+    """The X-Seed-Version header of every answer."""
+    return SEED_VERSION if getattr(c6_seed_header, "synced", False) else "2026.09.1"
