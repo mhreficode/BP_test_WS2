@@ -1,0 +1,242 @@
+{
+  "consumer": {
+    "name": "Storefront"
+  },
+  "provider": {
+    "name": "BossP.Api.Color"
+  },
+  "interactions": [
+    {
+      "description": "PI-1 get one colour",
+      "providerStates": [
+        {
+          "name": "seed 2026.10.1 loaded"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/colors/BP1009"
+      },
+      "response": {
+        "status": 200,
+        "rules": [
+          {
+            "path": "code",
+            "match": "regex",
+            "regex": "^BP[0-9]{4}$"
+          },
+          {
+            "path": "name",
+            "match": "type",
+            "type": "string"
+          },
+          {
+            "path": "hex",
+            "match": "regex",
+            "regex": "^#[0-9A-F]{6}$"
+          }
+        ]
+      }
+    },
+    {
+      "description": "PI-2 get the colours of a product",
+      "providerStates": [
+        {
+          "name": "seed 2026.10.1 loaded"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/products/SKU-0101/colors",
+        "query": "page=1&pageSize=10"
+      },
+      "response": {
+        "status": 200,
+        "rules": [
+          {
+            "path": "page",
+            "match": "type",
+            "type": "integer"
+          },
+          {
+            "path": "pageSize",
+            "match": "type",
+            "type": "integer"
+          },
+          {
+            "path": "total",
+            "match": "type",
+            "type": "integer"
+          },
+          {
+            "path": "totalPages",
+            "match": "type",
+            "type": "integer"
+          },
+          {
+            "path": "items",
+            "match": "type",
+            "type": "array-nonempty"
+          },
+          {
+            "path": "items[*].code",
+            "match": "type",
+            "type": "string"
+          },
+          {
+            "path": "items[*].name",
+            "match": "type",
+            "type": "string"
+          },
+          {
+            "path": "items[*].hex",
+            "match": "regex",
+            "regex": "^#[0-9A-F]{6}$"
+          }
+        ]
+      }
+    },
+    {
+      "description": "PI-3 get one colour card",
+      "providerStates": [
+        {
+          "name": "seed 2026.10.1 loaded"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/cards/CARD-01"
+      },
+      "response": {
+        "status": 200,
+        "rules": [
+          {
+            "path": "cardId",
+            "match": "type",
+            "type": "string"
+          },
+          {
+            "path": "colors",
+            "match": "type",
+            "type": "array-nonempty"
+          },
+          {
+            "path": "colors[*].position",
+            "match": "type",
+            "type": "integer"
+          },
+          {
+            "path": "colors[*].code",
+            "match": "type",
+            "type": "string"
+          },
+          {
+            "path": "colors[*].hex",
+            "match": "regex",
+            "regex": "^#[0-9A-F]{6}$"
+          }
+        ]
+      }
+    },
+    {
+      "description": "PI-4 get a second colour card",
+      "providerStates": [
+        {
+          "name": "seed 2026.10.1 loaded"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/cards/CARD-02"
+      },
+      "response": {
+        "status": 200,
+        "rules": [
+          {
+            "path": "cardId",
+            "match": "regex",
+            "regex": "^CARD-[0-9]{2}$"
+          },
+          {
+            "path": "year",
+            "match": "type",
+            "type": "integer"
+          },
+          {
+            "path": "colorCount",
+            "match": "type",
+            "type": "integer"
+          },
+          {
+            "path": "colors",
+            "match": "type",
+            "type": "array-nonempty"
+          },
+          {
+            "path": "colors[*].hex",
+            "match": "regex",
+            "regex": "^#[0-9A-F]{6}$"
+          }
+        ]
+      }
+    },
+    {
+      "description": "PI-5 unknown colour gives the standard error body",
+      "providerStates": [
+        {
+          "name": "seed 2026.10.1 loaded"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/colors/BP9999"
+      },
+      "response": {
+        "status": 404,
+        "rules": [
+          {
+            "path": "error.code",
+            "match": "regex",
+            "regex": "^NOT_FOUND$"
+          },
+          {
+            "path": "error.message",
+            "match": "type",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "description": "PI-6 withdrawn colour gives the standard error body",
+      "providerStates": [
+        {
+          "name": "seed 2026.10.1 loaded"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/colors/BP1038"
+      },
+      "response": {
+        "status": 410,
+        "rules": [
+          {
+            "path": "error.code",
+            "match": "regex",
+            "regex": "^COLOR_WITHDRAWN$"
+          },
+          {
+            "path": "error.message",
+            "match": "type",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "simulated": true,
+    "note": "SIMULATED consumer; flat rules, not Pact v3 matchingRules. Rule fields: path (dot path, [*] = every element), match (regex or type), type (string, integer, array-nonempty)."
+  }
+}

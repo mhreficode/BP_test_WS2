@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'P=; for c in python3 python py; do if command -v \"$c\" >/dev/null 2>&1 && \"$c\" -c \"\" >/dev/null 2>&1; then P=$c; break; fi; done; \"$P\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/prompt_gate.py\"; exit 0'"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'P=; for c in python3 python py; do if command -v \"$c\" >/dev/null 2>&1 && \"$c\" -c \"\" >/dev/null 2>&1; then P=$c; break; fi; done; \"$P\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/prompt_gate.py\"; exit 0'"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'P=; for c in python3 python py; do if command -v \"$c\" >/dev/null 2>&1 && \"$c\" -c \"\" >/dev/null 2>&1; then P=$c; break; fi; done; \"$P\" \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard.py\" || exit 2'"
+          }
+        ]
+      }
+    ]
+  }
+}

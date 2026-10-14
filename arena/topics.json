@@ -1,0 +1,58 @@
+{
+  "topics": [
+    {
+      "id": "C1",
+      "name": "Right answers",
+      "why": "A shop shows what the API says. If a colour name, hex or family is wrong, the customer sees the wrong paint.",
+      "rules": ["R04"],
+      "endpoints": ["E03", "E04", "E05"],
+      "zone": "C1",
+      "planter": "A"
+    },
+    {
+      "id": "C2",
+      "name": "Bad input",
+      "why": "People type codes by hand and apps send odd values. The API must say no clearly, and never crash.",
+      "rules": ["R01", "R03"],
+      "endpoints": ["E03", "E04", "E05", "E06"],
+      "zone": "C2",
+      "planter": "B"
+    },
+    {
+      "id": "C3",
+      "name": "Lists and search",
+      "why": "Lists feed the colour pages of the web shop. A wrong count, a gap or a repeat hides paint from customers.",
+      "rules": ["R02", "R08", "R10"],
+      "endpoints": ["E04", "E05"],
+      "zone": "C3",
+      "planter": "A"
+    },
+    {
+      "id": "C4",
+      "name": "Withdraw and mixable rules",
+      "why": "Withdrawn colours must not be sold and non-mixable products must not offer colours. These are money rules.",
+      "rules": ["R05", "R06", "R07"],
+      "endpoints": ["E03", "E04", "E05", "E06", "E07"],
+      "zone": "C4",
+      "planter": "B"
+    },
+    {
+      "id": "C5",
+      "name": "Keep the promise",
+      "why": "The spec is a promise to every app that calls the API. Wrong error bodies, statuses or field types break those apps.",
+      "rules": ["R09", "R06", "R07"],
+      "endpoints": ["E03", "E05", "E06"],
+      "zone": "C5",
+      "planter": "A"
+    },
+    {
+      "id": "C6",
+      "name": "Release gate",
+      "why": "Before a release we ask: can we ship? The data baseline, the sync output and the pact must still hold.",
+      "rules": ["R04", "R06"],
+      "endpoints": ["E01", "E02", "E03", "E06"],
+      "zone": "C6",
+      "planter": "B"
+    }
+  ]
+}

@@ -1,0 +1,2662 @@
+{
+  "Color": [
+    {
+      "_id": "BP1001",
+      "code": "BP1001",
+      "name": "Wit Gebroken",
+      "hex": "#F4F1E8",
+      "family": "white",
+      "active": true,
+      "formulaCode": "INN-1001",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1001",
+        "innovatintKey": "INN-1001",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1002",
+      "code": "BP1002",
+      "name": "Sneeuwwit",
+      "hex": "#FAFAF7",
+      "family": "white",
+      "active": true,
+      "formulaCode": "INN-1002",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1002",
+        "innovatintKey": "INN-1002",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1003",
+      "code": "BP1003",
+      "name": "Crèmewit",
+      "hex": "#F2EBD3",
+      "family": "white",
+      "active": true,
+      "formulaCode": "INN-1003",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1003",
+        "innovatintKey": "INN-1003",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1004",
+      "code": "BP1004",
+      "name": "Parelgrijs",
+      "hex": "#D8D8D4",
+      "family": "grey",
+      "active": true,
+      "formulaCode": "INN-1004",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1004",
+        "innovatintKey": "INN-1004",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1005",
+      "code": "BP1005",
+      "name": "Lichtgrijs",
+      "hex": "#C9CBCC",
+      "family": "grey",
+      "active": true,
+      "formulaCode": "INN-1005",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1005",
+        "innovatintKey": "INN-1005",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1006",
+      "code": "BP1006",
+      "name": "Betongrijs",
+      "hex": "#9A9C9B",
+      "family": "grey",
+      "active": true,
+      "formulaCode": "INN-1006",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1006",
+        "innovatintKey": "INN-1006",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1007",
+      "code": "BP1007",
+      "name": "Antraciet",
+      "hex": "#3A3D40",
+      "family": "grey",
+      "active": true,
+      "formulaCode": "INN-1007",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1007",
+        "innovatintKey": "INN-1007",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1008",
+      "code": "BP1008",
+      "name": "Gitzwart",
+      "hex": "#0B0B0C",
+      "family": "black",
+      "active": true,
+      "formulaCode": "INN-1008",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1008",
+        "innovatintKey": "INN-1008",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1009",
+      "code": "BP1009",
+      "name": "Delfts Blauw",
+      "hex": "#1F4E9C",
+      "family": "blue",
+      "active": true,
+      "formulaCode": "INN-1009",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1009",
+        "innovatintKey": "INN-1009",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1010",
+      "code": "BP1010",
+      "name": "Hemelsblauw",
+      "hex": "#8EC5E8",
+      "family": "blue",
+      "active": true,
+      "formulaCode": "INN-1010",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1010",
+        "innovatintKey": "INN-1010",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1011",
+      "code": "BP1011",
+      "name": "Zeeblauw",
+      "hex": "#2A6F97",
+      "family": "blue",
+      "active": true,
+      "formulaCode": "INN-1011",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1011",
+        "innovatintKey": "INN-1011",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1012",
+      "code": "BP1012",
+      "name": "Marineblauw",
+      "hex": "#14213D",
+      "family": "blue",
+      "active": true,
+      "formulaCode": "INN-1012",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1012",
+        "innovatintKey": "INN-1012",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1013",
+      "code": "BP1013",
+      "name": "Mosgroen",
+      "hex": "#6B7F3A",
+      "family": "green",
+      "active": true,
+      "formulaCode": "INN-1013",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1013",
+        "innovatintKey": "INN-1013",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1014",
+      "code": "BP1014",
+      "name": "Bosgroen",
+      "hex": "#2F5D3A",
+      "family": "green",
+      "active": true,
+      "formulaCode": "INN-1014",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1014",
+        "innovatintKey": "INN-1014",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1015",
+      "code": "BP1015",
+      "name": "Saliegroen",
+      "hex": "#A9B99A",
+      "family": "green",
+      "active": true,
+      "formulaCode": "INN-1015",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1015",
+        "innovatintKey": "INN-1015",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1016",
+      "code": "BP1016",
+      "name": "Appelgroen",
+      "hex": "#A8C66C",
+      "family": "green",
+      "active": true,
+      "formulaCode": "INN-1016",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1016",
+        "innovatintKey": "INN-1016",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1017",
+      "code": "BP1017",
+      "name": "Zonnegeel",
+      "hex": "#F6C928",
+      "family": "yellow",
+      "active": true,
+      "formulaCode": "INN-1017",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1017",
+        "innovatintKey": "INN-1017",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1018",
+      "code": "BP1018",
+      "name": "Maisgeel",
+      "hex": "#F2D675",
+      "family": "yellow",
+      "active": true,
+      "formulaCode": "INN-1018",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1018",
+        "innovatintKey": "INN-1018",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1019",
+      "code": "BP1019",
+      "name": "Okergeel",
+      "hex": "#CC9A2B",
+      "family": "yellow",
+      "active": true,
+      "formulaCode": "INN-1019",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1019",
+        "innovatintKey": "INN-1019",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1020",
+      "code": "BP1020",
+      "name": "Oranje Nassau",
+      "hex": "#F26B1D",
+      "family": "orange",
+      "active": true,
+      "formulaCode": "INN-1020",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1020",
+        "innovatintKey": "INN-1020",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1021",
+      "code": "BP1021",
+      "name": "Terracotta",
+      "hex": "#C0643B",
+      "family": "orange",
+      "active": true,
+      "formulaCode": "INN-1021",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1021",
+        "innovatintKey": "INN-1021",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1022",
+      "code": "BP1022",
+      "name": "Baksteenrood",
+      "hex": "#9C3D2E",
+      "family": "red",
+      "active": true,
+      "formulaCode": "INN-1022",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1022",
+        "innovatintKey": "INN-1022",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1023",
+      "code": "BP1023",
+      "name": "Kersenrood",
+      "hex": "#B3122B",
+      "family": "red",
+      "active": true,
+      "formulaCode": "INN-1023",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1023",
+        "innovatintKey": "INN-1023",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1024",
+      "code": "BP1024",
+      "name": "Bordeaux",
+      "hex": "#5E1224",
+      "family": "red",
+      "active": true,
+      "formulaCode": "INN-1024",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1024",
+        "innovatintKey": "INN-1024",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1025",
+      "code": "BP1025",
+      "name": "Flamingoroze",
+      "hex": "#F2A6B8",
+      "family": "pink",
+      "active": true,
+      "formulaCode": "INN-1025",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1025",
+        "innovatintKey": "INN-1025",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1026",
+      "code": "BP1026",
+      "name": "Oudroze",
+      "hex": "#C48B9F",
+      "family": "pink",
+      "active": true,
+      "formulaCode": "INN-1026",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1026",
+        "innovatintKey": "INN-1026",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1027",
+      "code": "BP1027",
+      "name": "Lavendel",
+      "hex": "#B7A6D6",
+      "family": "purple",
+      "active": true,
+      "formulaCode": "INN-1027",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1027",
+        "innovatintKey": "INN-1027",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1028",
+      "code": "BP1028",
+      "name": "Aubergine",
+      "hex": "#4A2545",
+      "family": "purple",
+      "active": true,
+      "formulaCode": "INN-1028",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1028",
+        "innovatintKey": "INN-1028",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1029",
+      "code": "BP1029",
+      "name": "Zand",
+      "hex": "#D9C7A0",
+      "family": "brown",
+      "active": true,
+      "formulaCode": "INN-1029",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1029",
+        "innovatintKey": "INN-1029",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1030",
+      "code": "BP1030",
+      "name": "Taupe",
+      "hex": "#8B7D6B",
+      "family": "brown",
+      "active": true,
+      "formulaCode": "INN-1030",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1030",
+        "innovatintKey": "INN-1030",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1031",
+      "code": "BP1031",
+      "name": "Walnoot",
+      "hex": "#5C4033",
+      "family": "brown",
+      "active": true,
+      "formulaCode": "INN-1031",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1031",
+        "innovatintKey": "INN-1031",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1032",
+      "code": "BP1032",
+      "name": "Koffiebruin",
+      "hex": "#3E2A21",
+      "family": "brown",
+      "active": true,
+      "formulaCode": "INN-1032",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1032",
+        "innovatintKey": "INN-1032",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1033",
+      "code": "BP1033",
+      "name": "Linnen",
+      "hex": "#E6DFCF",
+      "family": "white",
+      "active": true,
+      "formulaCode": "INN-1033",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1033",
+        "innovatintKey": "INN-1033",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1034",
+      "code": "BP1034",
+      "name": "Kiezelgrijs",
+      "hex": "#B1ADA3",
+      "family": "grey",
+      "active": true,
+      "formulaCode": "INN-1034",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1034",
+        "innovatintKey": "INN-1034",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1035",
+      "code": "BP1035",
+      "name": "Leigrijs",
+      "hex": "#5F6B73",
+      "family": "grey",
+      "active": true,
+      "formulaCode": "INN-1035",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1035",
+        "innovatintKey": "INN-1035",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1036",
+      "code": "BP1036",
+      "name": "Petrolblauw",
+      "hex": "#0F5C6E",
+      "family": "blue",
+      "active": true,
+      "formulaCode": "INN-1036",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1036",
+        "innovatintKey": "INN-1036",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1037",
+      "code": "BP1037",
+      "name": "Munt",
+      "hex": "#B8E0D2",
+      "family": "green",
+      "active": true,
+      "formulaCode": "INN-1037",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1037",
+        "innovatintKey": "INN-1037",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1038",
+      "code": "BP1038",
+      "name": "Olijfgroen",
+      "hex": "#7A7A2E",
+      "family": "green",
+      "active": false,
+      "formulaCode": "INN-1038",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1038",
+        "innovatintKey": "INN-1038",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1039",
+      "code": "BP1039",
+      "name": "Kanariegeel",
+      "hex": "#FFE135",
+      "family": "yellow",
+      "active": false,
+      "formulaCode": "INN-1039",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1039",
+        "innovatintKey": "INN-1039",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "BP1040",
+      "code": "BP1040",
+      "name": "Café Crème",
+      "hex": "#C8A887",
+      "family": "brown",
+      "active": false,
+      "formulaCode": "INN-1040",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo",
+          "innovatint"
+        ],
+        "foKey": "FO-COL-1040",
+        "innovatintKey": "INN-1040",
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    }
+  ],
+  "Product": [
+    {
+      "_id": "PRD-01",
+      "productCode": "PRD-01",
+      "name": "Muurverf Extra Mat",
+      "category": "wall paint",
+      "mixable": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-01",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-02",
+      "productCode": "PRD-02",
+      "name": "Muurverf Zijdeglans",
+      "category": "wall paint",
+      "mixable": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-02",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-03",
+      "productCode": "PRD-03",
+      "name": "Plafondverf Wit",
+      "category": "ceiling paint",
+      "mixable": false,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-03",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-04",
+      "productCode": "PRD-04",
+      "name": "Lak Hoogglans Binnen",
+      "category": "lacquer",
+      "mixable": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-04",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-05",
+      "productCode": "PRD-05",
+      "name": "Lak Zijdeglans Buiten",
+      "category": "lacquer",
+      "mixable": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-05",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-06",
+      "productCode": "PRD-06",
+      "name": "Gevelverf Weerbestendig",
+      "category": "facade paint",
+      "mixable": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-06",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-07",
+      "productCode": "PRD-07",
+      "name": "Houtbeits Transparant",
+      "category": "wood stain",
+      "mixable": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-07",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-08",
+      "productCode": "PRD-08",
+      "name": "Primer Hechtgrond",
+      "category": "primer",
+      "mixable": false,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-08",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-09",
+      "productCode": "PRD-09",
+      "name": "Vloerverf Slijtvast",
+      "category": "floor paint",
+      "mixable": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-09",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-10",
+      "productCode": "PRD-10",
+      "name": "Radiatorlak Wit",
+      "category": "lacquer",
+      "mixable": false,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-10",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-11",
+      "productCode": "PRD-11",
+      "name": "Kalkverf Mineraal",
+      "category": "wall paint",
+      "mixable": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-11",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PRD-12",
+      "productCode": "PRD-12",
+      "name": "Lakspray Collectie 2027",
+      "category": "spray",
+      "mixable": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PRD-12",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    }
+  ],
+  "Sku": [
+    {
+      "_id": "SKU-0101",
+      "sku": "SKU-0101",
+      "productCode": "PRD-01",
+      "packLiters": 1.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0101",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0102",
+      "sku": "SKU-0102",
+      "productCode": "PRD-01",
+      "packLiters": 2.5,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0102",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0103",
+      "sku": "SKU-0103",
+      "productCode": "PRD-01",
+      "packLiters": 10.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0103",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0201",
+      "sku": "SKU-0201",
+      "productCode": "PRD-02",
+      "packLiters": 1.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0201",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0202",
+      "sku": "SKU-0202",
+      "productCode": "PRD-02",
+      "packLiters": 2.5,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0202",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0203",
+      "sku": "SKU-0203",
+      "productCode": "PRD-02",
+      "packLiters": 10.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0203",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0301",
+      "sku": "SKU-0301",
+      "productCode": "PRD-03",
+      "packLiters": 5.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0301",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0302",
+      "sku": "SKU-0302",
+      "productCode": "PRD-03",
+      "packLiters": 10.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0302",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0401",
+      "sku": "SKU-0401",
+      "productCode": "PRD-04",
+      "packLiters": 0.75,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0401",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0402",
+      "sku": "SKU-0402",
+      "productCode": "PRD-04",
+      "packLiters": 2.5,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0402",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0501",
+      "sku": "SKU-0501",
+      "productCode": "PRD-05",
+      "packLiters": 0.75,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0501",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0502",
+      "sku": "SKU-0502",
+      "productCode": "PRD-05",
+      "packLiters": 2.5,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0502",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0503",
+      "sku": "SKU-0503",
+      "productCode": "PRD-05",
+      "packLiters": 5.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0503",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0601",
+      "sku": "SKU-0601",
+      "productCode": "PRD-06",
+      "packLiters": 5.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0601",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0602",
+      "sku": "SKU-0602",
+      "productCode": "PRD-06",
+      "packLiters": 10.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0602",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0701",
+      "sku": "SKU-0701",
+      "productCode": "PRD-07",
+      "packLiters": 1.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0701",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0702",
+      "sku": "SKU-0702",
+      "productCode": "PRD-07",
+      "packLiters": 2.5,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0702",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0801",
+      "sku": "SKU-0801",
+      "productCode": "PRD-08",
+      "packLiters": 1.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0801",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0802",
+      "sku": "SKU-0802",
+      "productCode": "PRD-08",
+      "packLiters": 2.5,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0802",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0803",
+      "sku": "SKU-0803",
+      "productCode": "PRD-08",
+      "packLiters": 5.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0803",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0901",
+      "sku": "SKU-0901",
+      "productCode": "PRD-09",
+      "packLiters": 2.5,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0901",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-0902",
+      "sku": "SKU-0902",
+      "productCode": "PRD-09",
+      "packLiters": 5.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-0902",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-1001",
+      "sku": "SKU-1001",
+      "productCode": "PRD-10",
+      "packLiters": 0.75,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-1001",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-1002",
+      "sku": "SKU-1002",
+      "productCode": "PRD-10",
+      "packLiters": 2.5,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-1002",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-1101",
+      "sku": "SKU-1101",
+      "productCode": "PRD-11",
+      "packLiters": 2.5,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-1101",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-1102",
+      "sku": "SKU-1102",
+      "productCode": "PRD-11",
+      "packLiters": 5.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-1102",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-1103",
+      "sku": "SKU-1103",
+      "productCode": "PRD-11",
+      "packLiters": 10.0,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-1103",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "SKU-1201",
+      "sku": "SKU-1201",
+      "productCode": "PRD-12",
+      "packLiters": 0.4,
+      "active": true,
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-SKU-1201",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    }
+  ],
+  "ProductColor": [
+    {
+      "_id": "PC-PRD-01-BP1001",
+      "productCode": "PRD-01",
+      "colorCode": "BP1001",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1001",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1002",
+      "productCode": "PRD-01",
+      "colorCode": "BP1002",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1002",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1003",
+      "productCode": "PRD-01",
+      "colorCode": "BP1003",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1003",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1004",
+      "productCode": "PRD-01",
+      "colorCode": "BP1004",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1004",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1005",
+      "productCode": "PRD-01",
+      "colorCode": "BP1005",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1005",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1006",
+      "productCode": "PRD-01",
+      "colorCode": "BP1006",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1006",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1007",
+      "productCode": "PRD-01",
+      "colorCode": "BP1007",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1007",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1008",
+      "productCode": "PRD-01",
+      "colorCode": "BP1008",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1008",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1009",
+      "productCode": "PRD-01",
+      "colorCode": "BP1009",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1009",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1010",
+      "productCode": "PRD-01",
+      "colorCode": "BP1010",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1010",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1011",
+      "productCode": "PRD-01",
+      "colorCode": "BP1011",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1011",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1012",
+      "productCode": "PRD-01",
+      "colorCode": "BP1012",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1012",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1013",
+      "productCode": "PRD-01",
+      "colorCode": "BP1013",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1013",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1014",
+      "productCode": "PRD-01",
+      "colorCode": "BP1014",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1014",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1015",
+      "productCode": "PRD-01",
+      "colorCode": "BP1015",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1015",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1016",
+      "productCode": "PRD-01",
+      "colorCode": "BP1016",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1016",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1017",
+      "productCode": "PRD-01",
+      "colorCode": "BP1017",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1017",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1018",
+      "productCode": "PRD-01",
+      "colorCode": "BP1018",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1018",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1019",
+      "productCode": "PRD-01",
+      "colorCode": "BP1019",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1019",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-01-BP1020",
+      "productCode": "PRD-01",
+      "colorCode": "BP1020",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-01-BP1020",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1001",
+      "productCode": "PRD-02",
+      "colorCode": "BP1001",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1001",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1002",
+      "productCode": "PRD-02",
+      "colorCode": "BP1002",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1002",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1003",
+      "productCode": "PRD-02",
+      "colorCode": "BP1003",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1003",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1004",
+      "productCode": "PRD-02",
+      "colorCode": "BP1004",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1004",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1005",
+      "productCode": "PRD-02",
+      "colorCode": "BP1005",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1005",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1006",
+      "productCode": "PRD-02",
+      "colorCode": "BP1006",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1006",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1007",
+      "productCode": "PRD-02",
+      "colorCode": "BP1007",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1007",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1008",
+      "productCode": "PRD-02",
+      "colorCode": "BP1008",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1008",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1009",
+      "productCode": "PRD-02",
+      "colorCode": "BP1009",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1009",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1010",
+      "productCode": "PRD-02",
+      "colorCode": "BP1010",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1010",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1011",
+      "productCode": "PRD-02",
+      "colorCode": "BP1011",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1011",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-02-BP1039",
+      "productCode": "PRD-02",
+      "colorCode": "BP1039",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-02-BP1039",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-04-BP1001",
+      "productCode": "PRD-04",
+      "colorCode": "BP1001",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-04-BP1001",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-04-BP1008",
+      "productCode": "PRD-04",
+      "colorCode": "BP1008",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-04-BP1008",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-04-BP1009",
+      "productCode": "PRD-04",
+      "colorCode": "BP1009",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-04-BP1009",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-04-BP1012",
+      "productCode": "PRD-04",
+      "colorCode": "BP1012",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-04-BP1012",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-04-BP1014",
+      "productCode": "PRD-04",
+      "colorCode": "BP1014",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-04-BP1014",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-04-BP1017",
+      "productCode": "PRD-04",
+      "colorCode": "BP1017",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-04-BP1017",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-04-BP1022",
+      "productCode": "PRD-04",
+      "colorCode": "BP1022",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-04-BP1022",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-04-BP1023",
+      "productCode": "PRD-04",
+      "colorCode": "BP1023",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-04-BP1023",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1004",
+      "productCode": "PRD-05",
+      "colorCode": "BP1004",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1004",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1005",
+      "productCode": "PRD-05",
+      "colorCode": "BP1005",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1005",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1006",
+      "productCode": "PRD-05",
+      "colorCode": "BP1006",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1006",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1007",
+      "productCode": "PRD-05",
+      "colorCode": "BP1007",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1007",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1008",
+      "productCode": "PRD-05",
+      "colorCode": "BP1008",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1008",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1011",
+      "productCode": "PRD-05",
+      "colorCode": "BP1011",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1011",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1012",
+      "productCode": "PRD-05",
+      "colorCode": "BP1012",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1012",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1013",
+      "productCode": "PRD-05",
+      "colorCode": "BP1013",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1013",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1014",
+      "productCode": "PRD-05",
+      "colorCode": "BP1014",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1014",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-05-BP1015",
+      "productCode": "PRD-05",
+      "colorCode": "BP1015",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-05-BP1015",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1004",
+      "productCode": "PRD-06",
+      "colorCode": "BP1004",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1004",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1005",
+      "productCode": "PRD-06",
+      "colorCode": "BP1005",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1005",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1006",
+      "productCode": "PRD-06",
+      "colorCode": "BP1006",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1006",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1013",
+      "productCode": "PRD-06",
+      "colorCode": "BP1013",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1013",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1014",
+      "productCode": "PRD-06",
+      "colorCode": "BP1014",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1014",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1021",
+      "productCode": "PRD-06",
+      "colorCode": "BP1021",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1021",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1022",
+      "productCode": "PRD-06",
+      "colorCode": "BP1022",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1022",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1029",
+      "productCode": "PRD-06",
+      "colorCode": "BP1029",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1029",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1030",
+      "productCode": "PRD-06",
+      "colorCode": "BP1030",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1030",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-06-BP1031",
+      "productCode": "PRD-06",
+      "colorCode": "BP1031",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-06-BP1031",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-07-BP1021",
+      "productCode": "PRD-07",
+      "colorCode": "BP1021",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-07-BP1021",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-07-BP1022",
+      "productCode": "PRD-07",
+      "colorCode": "BP1022",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-07-BP1022",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-07-BP1029",
+      "productCode": "PRD-07",
+      "colorCode": "BP1029",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-07-BP1029",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-07-BP1030",
+      "productCode": "PRD-07",
+      "colorCode": "BP1030",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-07-BP1030",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-07-BP1031",
+      "productCode": "PRD-07",
+      "colorCode": "BP1031",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-07-BP1031",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-07-BP1032",
+      "productCode": "PRD-07",
+      "colorCode": "BP1032",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-07-BP1032",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-09-BP1004",
+      "productCode": "PRD-09",
+      "colorCode": "BP1004",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-09-BP1004",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-09-BP1005",
+      "productCode": "PRD-09",
+      "colorCode": "BP1005",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-09-BP1005",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-09-BP1006",
+      "productCode": "PRD-09",
+      "colorCode": "BP1006",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-09-BP1006",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-09-BP1007",
+      "productCode": "PRD-09",
+      "colorCode": "BP1007",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-09-BP1007",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-09-BP1008",
+      "productCode": "PRD-09",
+      "colorCode": "BP1008",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-09-BP1008",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-09-BP1035",
+      "productCode": "PRD-09",
+      "colorCode": "BP1035",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-09-BP1035",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-11-BP1001",
+      "productCode": "PRD-11",
+      "colorCode": "BP1001",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-11-BP1001",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-11-BP1002",
+      "productCode": "PRD-11",
+      "colorCode": "BP1002",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-11-BP1002",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-11-BP1003",
+      "productCode": "PRD-11",
+      "colorCode": "BP1003",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-11-BP1003",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-11-BP1029",
+      "productCode": "PRD-11",
+      "colorCode": "BP1029",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-11-BP1029",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-11-BP1033",
+      "productCode": "PRD-11",
+      "colorCode": "BP1033",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-11-BP1033",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "PC-PRD-11-BP1034",
+      "productCode": "PRD-11",
+      "colorCode": "BP1034",
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-PC-PRD-11-BP1034",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    }
+  ],
+  "SkuColorCard": [
+    {
+      "_id": "CARD-01",
+      "cardId": "CARD-01",
+      "name": "Muur Collectie 2026",
+      "year": 2026,
+      "sku": "SKU-0101",
+      "colors": [
+        {
+          "position": 1,
+          "colorCode": "BP1001"
+        },
+        {
+          "position": 2,
+          "colorCode": "BP1002"
+        },
+        {
+          "position": 3,
+          "colorCode": "BP1003"
+        },
+        {
+          "position": 4,
+          "colorCode": "BP1004"
+        },
+        {
+          "position": 5,
+          "colorCode": "BP1005"
+        },
+        {
+          "position": 6,
+          "colorCode": "BP1006"
+        },
+        {
+          "position": 7,
+          "colorCode": "BP1007"
+        },
+        {
+          "position": 8,
+          "colorCode": "BP1008"
+        },
+        {
+          "position": 9,
+          "colorCode": "BP1009"
+        },
+        {
+          "position": 10,
+          "colorCode": "BP1010"
+        },
+        {
+          "position": 11,
+          "colorCode": "BP1011"
+        },
+        {
+          "position": 12,
+          "colorCode": "BP1012"
+        }
+      ],
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-CARD-01",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "CARD-02",
+      "cardId": "CARD-02",
+      "name": "Hout en Lak Essentials",
+      "year": 2026,
+      "sku": "SKU-0401",
+      "colors": [
+        {
+          "position": 1,
+          "colorCode": "BP1001"
+        },
+        {
+          "position": 2,
+          "colorCode": "BP1017"
+        },
+        {
+          "position": 3,
+          "colorCode": "BP1022"
+        },
+        {
+          "position": 4,
+          "colorCode": "BP1023"
+        },
+        {
+          "position": 5,
+          "colorCode": "BP1009"
+        },
+        {
+          "position": 6,
+          "colorCode": "BP1012"
+        },
+        {
+          "position": 7,
+          "colorCode": "BP1014"
+        },
+        {
+          "position": 8,
+          "colorCode": "BP1008"
+        }
+      ],
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-CARD-02",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    },
+    {
+      "_id": "CARD-03",
+      "cardId": "CARD-03",
+      "name": "Gevel Collectie 2026",
+      "year": 2026,
+      "sku": "SKU-0601",
+      "colors": [
+        {
+          "position": 1,
+          "colorCode": "BP1006"
+        },
+        {
+          "position": 2,
+          "colorCode": "BP1014"
+        },
+        {
+          "position": 3,
+          "colorCode": "BP1021"
+        },
+        {
+          "position": 4,
+          "colorCode": "BP1022"
+        },
+        {
+          "position": 5,
+          "colorCode": "BP1029"
+        },
+        {
+          "position": 6,
+          "colorCode": "BP1030"
+        }
+      ],
+      "_sync": {
+        "batchId": "SYNC-2026-10-01-01",
+        "sources": [
+          "fo"
+        ],
+        "foKey": "FO-CARD-03",
+        "innovatintKey": null,
+        "syncedAt": "2026-10-01T02:00:00Z"
+      }
+    }
+  ]
+}

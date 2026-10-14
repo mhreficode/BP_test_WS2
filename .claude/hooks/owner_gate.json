@@ -1,0 +1,9 @@
+{
+  "alg": "scrypt",
+  "n": 16384,
+  "r": 8,
+  "p": 1,
+  "dklen": 32,
+  "salt": "8558206834ebf7b86b08a3ba099bbd08",
+  "hash": "7b47ffbd28e6c7bca8a6c1ca952b1d4930678a36a3a3c4274aed94fe503a5fac"
+}
