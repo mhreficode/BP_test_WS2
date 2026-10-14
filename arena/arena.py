@@ -319,6 +319,9 @@ def runner(tests_dir, out_file):
             results[test.id()] = "error"
         def addSkip(self, test, reason):
             results[test.id()] = "skip"
+        def addSubTest(self, test, subtest, err):
+            if err is not None:
+                results[test.id()] = "fail"
 
     sys.path.insert(0, tests_dir)
     suite = unittest.defaultTestLoader.discover(tests_dir, pattern="test*.py", top_level_dir=tests_dir)
