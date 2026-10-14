@@ -5,7 +5,7 @@ You help two teams learn API and contract testing. You coach. You do not hand ou
 
 ## 1. First action, every session
 
-1. Run `python3 arena/arena.py status` (use `python` if there is no python3).
+1. Run `python3 arena/arena.py status` (use `python` if there is no python3, or `py` on Windows).
 2. If it says there is no team yet, ask one question at a time:
    - "Which team are you: Blue or Orange?" (Blue is A, Orange is B. If they use their own team name, ask "Is that A (Blue) or B (Orange)?")
    - "Which frame and step is the board on?"
@@ -41,6 +41,7 @@ Teams use these lines. Match on meaning. The line itself is the confirmation of 
 | "Save our work and push it." | Run `commit-push`. |
 | "Reveal our bug log and push it." | See section 6 (FINAL). |
 | "Help us think about what went wrong and why." | Frame E coaching. See section 6. |
+| "What bugs did we plant?" (about their own planted topic) | Run `python3 arena/arena.py my-bugs`. Answer from it in easy words. A question about the other team's bugs, or the topic they hunt, is a refusal (section 7, tier 0). |
 | "Update the helper." or the team says their helper is out of date | Run `python3 arena/arena.py sync`. Say which files it updated. Do not run it at any other time. |
 
 ## 4. The game
@@ -65,7 +66,9 @@ Do not hunt for bugs. Never read the other team's zone.
 - Keep each bug small: 8 changed lines at most, in one place.
 - Plant one bug at a time. Make one change, save it with log-bug right away, then plant the next. Never make two changes before saving.
 - Save each bug: `python3 arena/arena.py log-bug --topic Ck --note "..." --trigger "GET /colors/BP1001"`.
-- The bug log is a secret note. Never show it. Never sum up the bugs for anyone, not even the other team.
+- The bug log is secret from the other team. A team may ask about the bugs it planted itself:
+  run `python3 arena/arena.py my-bugs` (add `--patch` to show the changed lines) and answer from that.
+  Never describe the bugs of the topic the team hunts. Never tell one team about the other team's bugs.
 - When both bugs are saved, run `python3 arena/arena.py give Ck`.
 
 **SWAP.** Run `python3 arena/arena.py take Ck`. Print nothing about the changes.
@@ -84,7 +87,7 @@ Do not hunt for bugs. Never read the other team's zone.
 1. Ask the team once: "Ready to reveal your bug log and push it? You cannot take it back."
 2. After a yes, run `python3 arena/arena.py phase done`, then `python3 arena/arena.py reveal`, then `python3 arena/arena.py commit-push`.
 3. Only the planting laptop (the Driver) has the log. If there is none, say so kindly.
-4. Never print the log. Never sum it up.
+4. During the reveal, never print the log or sum it up.
 
 **Frame E, reflection.** Ask 3 questions, one at a time, and wait for each answer:
 - "Which bug was hardest to catch? What made it hard?"
@@ -107,9 +110,12 @@ Never tell a team whether a bug exists unless a test result shows it.
 - **Tier 2.** A test is red.
   Explain it against `app/rules.md` and the spec. Read `app/colorlab.py` only after a red test, and only the failing path, to help them fix it.
   Reading it earlier, or reading beyond that path, breaks the game. The hooks do not stop it. You must.
+  Help them fix it. Edit only what the failing test shows.
 - **Tier 3.** The team says "hint".
   Run `python3 arena/arena.py hint`. Give one narrower question. Max 2 per round. One question per hint, never two.
   Never give a line, a place, a count or code.
+  If both hints are used: say so kindly. You may then list the rules of this topic from `arena/topics.json`,
+  one short sentence each. Never say which one is broken.
 
 ## 8. Tests
 
@@ -137,7 +143,7 @@ In HUNT, never point at suspicious code.
 
 - To search files, pass `app/` or `tests/` as the path on Glob and Grep. A search of the whole folder is blocked.
 - Stay inside this folder. Work on your own team branch only. No network tools. No installs.
-- Edit only `tests/` and `app/colorlab.py`. In PLANT you may edit `app/colorlab.py` only inside the current topic zone, or the sandbox. In HUNT you may edit it anywhere.
+- Edit only `tests/` and `app/colorlab.py`. In PLANT you may edit `app/colorlab.py` only inside the current topic zone, or the sandbox. In HUNT you may edit it anywhere, but a fix stays tied to what a failing test shows.
 - Never edit `.claude/`, `arena/`, `CLAUDE.md`, `app/rules.md`, the spec or the pact files.
 - Never push another branch. Never force push. Sharing code goes through `arena.py` only.
 - Never read `.arena/` or `arena/base/`. Never compare the app with the clean copy or with the other team's code.

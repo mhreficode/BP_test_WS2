@@ -7,6 +7,7 @@ description: Coach a team that hunts the other team's bugs in the HUNT phase. Ma
 
 Use this in HUNT. The team has taken the other team's topic. Their job: write tests that catch 2 hidden bugs.
 You help them think. You never find the bugs for them.
+A team may ask about the bugs it planted itself (`python3 arena/arena.py my-bugs`). It may never ask about the bugs in the topic it hunts. Refuse that kindly.
 
 ## The ladder
 

@@ -5,7 +5,7 @@ It wraps git and colorlab so nobody has to type git. Run it from anywhere:
     python arena/arena.py <verb> ...        (Windows: py arena\\arena.py <verb> ...)
 
 Verbs: init, status, phase, hint, serve, plant-start, log-bug, give, take, run-tests,
-commit-push, score-round, reveal, sync. Use "<verb> --help" for the details of one verb.
+commit-push, score-round, reveal, my-bugs, sync. Use "<verb> --help" for the details of one verb.
 """
 import argparse
 import ast
@@ -693,6 +693,52 @@ def cmd_reveal(a):
     say("Bug log of team %s (%d bugs) is pushed to %s." % (state["team"], len(bugs), state["branch"]))
 
 
+def short_body(answer):
+    body = answer.get("body")
+    text = body if isinstance(body, str) else json.dumps(body, sort_keys=True, ensure_ascii=False)
+    return text[:120]
+
+
+def cmd_my_bugs(a):
+    state = load_state()
+    own = own_topics(state)
+    topic = None
+    if a.topic:
+        topic = a.topic.upper()
+        if topic not in own:
+            raise Stop("That topic is not yours to plant. Your topics: %s." % ", ".join(own))
+    broken = "The bug log could not be read. Tell Mohammad."
+    try:
+        mine = [b for b in load_bugs()
+                if b.get("topic") in own and (topic is None or b["topic"] == topic)]
+    except (ValueError, OSError, AttributeError, TypeError, KeyError):
+        raise Stop(broken)
+    if not mine:
+        say("No bug is logged yet.")
+        return
+    for bug in mine:
+        try:
+            trig = bug["trigger"]
+            clean, bad = bug["clean_answer"], bug["buggy_answer"]
+            lines = ["Bug %s" % bug["id"],
+                     "  Topic: %s" % bug["topic"],
+                     "  Rule: %s" % bug["rule"],
+                     "  What it does: %s" % bug["description"],
+                     "  Trigger: %s %s" % (trig["method"], trig["path"]),
+                     "  Clean app answers: %s" % clean["status"],
+                     "  Buggy app answers: %s" % bad["status"]]
+            if clean.get("body") != bad.get("body"):
+                lines += ["  Clean body: %s" % short_body(clean),
+                          "  Buggy body: %s" % short_body(bad)]
+            if a.patch:
+                lines.append("  Changed lines:")
+                lines += ["    " + line for line in bug["patch"].split("\n")]
+        except (KeyError, TypeError, AttributeError):
+            raise Stop(broken)
+        say(*lines)
+        say("")
+
+
 def cmd_sync(a):
     git("fetch", "origin", "+refs/heads/main:refs/arena/main", fail=NET)
     updated = []
@@ -708,7 +754,11 @@ def cmd_sync(a):
         temp.write_bytes(got.stdout)
         if target.exists():
             shutil.copymode(str(target), str(temp))
-        os.replace(str(temp), str(target))
+        try:
+            os.replace(str(temp), str(target))
+        except OSError:
+            temp.unlink()
+            raise Stop("Could not replace %s. Close any editor that has it open, then run sync again." % name)
         updated.append(name)
     say("Updated: " + ", ".join(updated) if updated else "Already up to date.")
     if SYNC_PATHS[0] in updated:
@@ -757,6 +807,9 @@ def build_parser():
     p = add("score-round", cmd_score_round, "Planter laptop: count what the other team's tests catch.")
     p.add_argument("--topic", required=True)
     add("reveal", cmd_reveal, "Push your bug log to your team branch (Frame D).")
+    p = add("my-bugs", cmd_my_bugs, "Show the bugs your own team planted. Never shows the other team's.")
+    p.add_argument("--topic", help="only one of your own topics, e.g. C1")
+    p.add_argument("--patch", action="store_true", help="also show the changed lines")
     add("sync", cmd_sync, "Update the helper files from the shared repo. "
                           "Safe: your app and tests are not touched.")
     hidden = sub.add_parser("_run")
@@ -767,6 +820,9 @@ def build_parser():
 
 
 def main(argv=None):
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(errors="replace")
     parser = build_parser()
     args = parser.parse_args(argv)
     if not getattr(args, "fn", None):

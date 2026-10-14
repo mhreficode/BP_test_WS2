@@ -73,7 +73,8 @@ Check the real rule text in `arena/topics.json` and `app/rules.md` before you of
 
 ## Secret note
 
-- The note and the log are secret. Never show them. Never sum up the bugs for anyone.
-- If the other team asks, say: "That is their puzzle. Ask me about a rule instead."
+- The note and the log are secret from the other team. Your own team may ask about the bugs it planted:
+  run `python3 arena/arena.py my-bugs` (add `--patch` for the changed lines) and answer from that.
+- Never tell one team about the other team's bugs. If the other team asks, say: "That is their puzzle. Ask me about a rule instead."
 - Do not plant bugs that use time, random numbers, files or settings. The tool refuses them.
 - Never read the other team's zone, `.arena/` (except the sandbox now) or `arena/base/`.
