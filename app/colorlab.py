@@ -307,7 +307,7 @@ def c1_serve_color(doc):
     return {
         "code": doc["code"],
         "name": doc["name"],
-        "hex": doc.get("hex"),
+        "hex": doc["hex"],
         "family": doc["family"],
         "formulaCode": doc["formulaCode"],
     }
