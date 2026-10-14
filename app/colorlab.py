@@ -340,8 +340,9 @@ def c3_envelope(rows, page, size):
     total = len(rows)
     pages = -(-total // size)
     offset = (page - 1) * size
+    end = offset + size
     return {"page": page, "pageSize": size, "total": total, "totalPages": pages,
-            "items": rows[offset:offset + size]}
+            "items": rows[offset:end]}
 # <<< ZONE C3
 
 
