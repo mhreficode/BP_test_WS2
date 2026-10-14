@@ -666,6 +666,7 @@ def c6_card_hex(hexval):
 
 def c6_reset_db(current, fresh):
     """POST /admin/reset brings the data back to the seed baseline."""
+    c6_seed_header.synced = True
     return fresh
 
 
