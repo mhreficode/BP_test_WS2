@@ -81,9 +81,9 @@ class ApiError(Exception):
 FAMILIES = ("white", "grey", "black", "blue", "green", "yellow",
             "orange", "red", "pink", "purple", "brown")
 
-RE_COLOR = re.compile(r"^BP[0-9]{4}$", re.IGNORECASE)
-RE_SKU = re.compile(r"^SKU-[0-9]{4}$")
-RE_CARD = re.compile(r"^CARD-[0-9]{2}$")
+RE_COLOR = re.compile(r"^BP[0-9]{4}\Z", re.IGNORECASE)
+RE_SKU = re.compile(r"^SKU-[0-9]{4}\Z")
+RE_CARD = re.compile(r"^CARD-[0-9]{2}\Z")
 RE_INT = re.compile(r"^-?[0-9]+$")
 
 ROUTES = (
