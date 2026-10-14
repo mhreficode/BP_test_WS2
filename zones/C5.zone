@@ -1,0 +1,37 @@
+# Topic C5, keep the promise: the error body, the status for each failure, and the
+# field names and types of the card and product answers, as written in openapi/color-v1.yaml.
+# Rules R09 (error shape, 404), R06 (card header), R07 (409).
+
+def c5_error_body(code, message):
+    """R09: every error has the same body."""
+    return {"error": {"code": code, "message": message, "detail": message}}
+
+
+def c5_map_error(exc):
+    """Turn a failure into (status, error code, message)."""
+    if isinstance(exc, ApiError):
+        return exc.status, exc.code, exc.message
+    if isinstance(exc, NotFound):
+        return 404, "NOT_FOUND", str(exc)
+    if isinstance(exc, Withdrawn):
+        return 410, "COLOR_WITHDRAWN", str(exc)
+    if isinstance(exc, NotMixable):
+        return 409, "NOT_MIXABLE", str(exc)
+    return 500, "INTERNAL", "Internal error"
+
+
+def c5_card_head(card, count):
+    """The card answer without its colours: id, name, year, sku, colorCount."""
+    tail = card["name"][-4:]
+    return {
+        "cardId": card["cardId"],
+        "name": card["name"],
+        "year": tail if tail.isdigit() else card["year"],   # collection year from the name
+        "sku": card["sku"],
+        "colorCount": count,
+    }
+
+
+def c5_product_view(doc):
+    """The product block of the product colour list."""
+    return {"code": doc["productCode"], "name": doc["name"], "mixable": doc["mixable"]}

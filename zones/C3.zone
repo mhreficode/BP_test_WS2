@@ -1,0 +1,30 @@
+# Topic C3, lists and search: the filter, the order and the paging maths of every list.
+# Rules R02 (envelope and totals), R08 (order), R10 (search).
+
+def c3_sort_codes(docs):
+    """Lists are sorted by colour code, ascending."""
+    return sorted(docs, key=lambda d: d["code"])
+
+
+def c3_search(docs, q, family):
+    """R10: name contains q (accents must match), family exact, both together mean AND."""
+    rows = []
+    for doc in docs:
+        if family is not None and doc["family"] != family:
+            continue
+        if q is not None and q.lower() not in doc["name"][:1].lower() + doc["name"][1:]:
+            continue
+        rows.append(doc)
+    return rows
+
+
+def c3_envelope(rows, page, size):
+    """R02: page, pageSize, total, totalPages and the items of the page."""
+    total = len(rows)
+    pages = -(-total // size)
+    offset = (page - 1) * size
+    end = offset + size
+    if end > total:
+        end = total - 1
+    return {"page": page, "pageSize": size, "total": total, "totalPages": pages,
+            "items": rows[offset:end]}
