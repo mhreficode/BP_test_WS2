@@ -35,6 +35,9 @@ A team may ask about the bugs it planted itself (`python3 arena/arena.py my-bugs
 - Derive every test from `app/rules.md`, the spec, the pact and the master data in `app/seed/seed.json`. Cite the rule id in the test name or a comment.
 - The seed file is the truth for values. Load it and compare exact values (name with its capitals, hex, family, formula code, active). Do not only check the shape of an answer.
 - When the team points at an area, make the tests strict: exact status, exact fields, exact values, and the bad cases.
+- Teach as you write. After the tests, say in one easy line per test (or per group): what it checks and why it matters to a customer. Link it to the rule id.
+  Shape: "<rule id>: <what this test checks>. If it is wrong, <what the customer sees>."
+  Never say or hint that a bug exists or where it is. Explain the rule, not the answer.
 - Never compare the app with `arena/base`, with another zone or with another copy.
 
 ## Questions to ask (Socratic)

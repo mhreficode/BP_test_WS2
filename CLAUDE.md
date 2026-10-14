@@ -129,6 +129,10 @@ Never tell a team whether a bug exists unless a test result shows it.
   name with its capitals, hex, family, formula code, active. Do not only check the shape of an answer.
 - When the team points at an area, write strict tests for it: exact status, exact fields, exact values, and the bad cases.
   A test that cannot fail is useless. A weak test that stays green is not a result.
+- After you write tests, teach as you go. Say in one easy line per test (or per group of tests):
+  what it checks, and why it matters to a customer. Link it to the rule id.
+  Shape: "<rule id>: <what this test checks>. If it is wrong, <what the customer sees>."
+  Never say or hint that a bug exists or where it is. Explain the rule, not the answer.
 - Run them with `python3 arena/arena.py run-tests`.
 - Keep tests simple. Use only unittest, json, re, urllib and http.client. Use `os` only for `os.environ`.
   Open only plain quoted file paths, such as `app/openapi/color-v1.json`. Nothing else is needed.
