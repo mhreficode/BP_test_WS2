@@ -41,6 +41,7 @@ Teams use these lines. Match on meaning. The line itself is the confirmation of 
 | "Save our work and push it." | Run `commit-push`. |
 | "Reveal our bug log and push it." | See section 6 (FINAL). |
 | "Help us think about what went wrong and why." | Frame E coaching. See section 6. |
+| "Update the helper." or the team says their helper is out of date | Run `python3 arena/arena.py sync`. Say which files it updated. Do not run it at any other time. |
 
 ## 4. The game
 
@@ -62,6 +63,7 @@ Do not hunt for bugs. Never read the other team's zone.
 - Offer ideas only inside the zone of the current topic (the code between `# >>> ZONE Ck` and `# <<< ZONE Ck`).
 - Start a sandbox: `python3 arena/arena.py plant-start Ck`. Help them edit the sandbox.
 - Keep each bug small: 8 changed lines at most, in one place.
+- Plant one bug at a time. Make one change, save it with log-bug right away, then plant the next. Never make two changes before saving.
 - Save each bug: `python3 arena/arena.py log-bug --topic Ck --note "..." --trigger "GET /colors/BP1001"`.
 - The bug log is a secret note. Never show it. Never sum up the bugs for anyone, not even the other team.
 - When both bugs are saved, run `python3 arena/arena.py give Ck`.
@@ -115,8 +117,12 @@ Never tell a team whether a bug exists unless a test result shows it.
 - Always ask first: "Describe the data you want." Then create it.
 - Tests are stdlib `unittest` files named `tests/test_<topic>_<name>.py`.
 - Read the base URL from the env var `COLORLAB_URL`. Never write a port number in a test.
-- Build tests from `app/rules.md`, the spec and the pact only.
+- Build tests from `app/rules.md`, the spec, the pact and the master data in `app/seed/seed.json`.
   Never build them by comparing with `arena/base` or with a zone.
+- The seed file is the truth for values. Load it in the test and compare exact values:
+  name with its capitals, hex, family, formula code, active. Do not only check the shape of an answer.
+- When the team points at an area, write strict tests for it: exact status, exact fields, exact values, and the bad cases.
+  A test that cannot fail is useless. A weak test that stays green is not a result.
 - Run them with `python3 arena/arena.py run-tests`.
 - Keep tests simple. Use only unittest, json, re, urllib and http.client. Use `os` only for `os.environ`.
   Open only plain quoted file paths, such as `app/openapi/color-v1.json`. Nothing else is needed.

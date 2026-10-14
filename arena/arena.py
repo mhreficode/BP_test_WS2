@@ -5,7 +5,7 @@ It wraps git and colorlab so nobody has to type git. Run it from anywhere:
     python arena/arena.py <verb> ...        (Windows: py arena\\arena.py <verb> ...)
 
 Verbs: init, status, phase, hint, serve, plant-start, log-bug, give, take, run-tests,
-commit-push, score-round, reveal. Use "<verb> --help" for the details of one verb.
+commit-push, score-round, reveal, sync. Use "<verb> --help" for the details of one verb.
 """
 import argparse
 import ast
@@ -37,6 +37,8 @@ TEAMS = {"A": ("team-a", "handoff-a", "Blue"), "B": ("team-b", "handoff-b", "Ora
 PHASES = ("learn", "plant", "swap", "hunt", "score", "done")
 MAX_BUGS = 2
 MAX_LINES = 8
+SYNC_PATHS = ["arena/arena.py", "CLAUDE.md", ".claude/skills/plant-ideas/SKILL.md",
+              ".claude/skills/hunt-coach/SKILL.md", ".claude/skills/code-tour/SKILL.md"]
 ZONE_RE = re.compile(r"^# (>>>|<<<) ZONE (C[1-6])\s*$")
 BANNED = {"time", "random", "os", "sys", "environ", "subprocess", "socket", "open",
           "eval", "exec", "datetime", "__import__", "getenv"}
@@ -512,7 +514,8 @@ def cmd_log_bug(a):
     for bug in mine:
         for o in bug["ops"]:
             if any(o[0] <= p[1] and p[0] <= o[1] for p in ops):
-                raise Stop("Not saved: that overlaps your first bug. Change a different spot.")
+                raise Stop("Not saved: that overlaps your first bug. Change a different spot. "
+                           "The sandbox starts clean after each save.")
     clean = ask(BASE, trigger)
     bad = ask(SANDBOX, trigger)
     if clean is None:
@@ -532,6 +535,9 @@ def cmd_log_bug(a):
     say("Saved bug %d of %d for %s. The sandbox is reset to the clean code."
         % (len(mine) + 1, MAX_BUGS, topic),
         "Plant the next one, or run: give %s" % topic)
+    if len(ops) > 1:
+        say("Note: this bug has %d separate changes. Next time make one change, save it, "
+            "then plant the next." % len(ops))
 
 
 def cmd_give(a):
@@ -687,6 +693,28 @@ def cmd_reveal(a):
     say("Bug log of team %s (%d bugs) is pushed to %s." % (state["team"], len(bugs), state["branch"]))
 
 
+def cmd_sync(a):
+    git("fetch", "origin", "+refs/heads/main:refs/arena/main", fail=NET)
+    updated = []
+    for name in SYNC_PATHS:
+        got = git("cat-file", "blob", "refs/arena/main:" + name, check=False, raw=True)
+        if got.returncode != 0:
+            continue
+        target = ROOT / name
+        if target.exists() and target.read_bytes() == got.stdout:
+            continue
+        target.parent.mkdir(parents=True, exist_ok=True)
+        temp = target.with_name(target.name + ".sync-tmp")
+        temp.write_bytes(got.stdout)
+        if target.exists():
+            shutil.copymode(str(target), str(temp))
+        os.replace(str(temp), str(target))
+        updated.append(name)
+    say("Updated: " + ", ".join(updated) if updated else "Already up to date.")
+    if SYNC_PATHS[0] in updated:
+        say("Run your command again if it asked for a new helper.")
+
+
 # ---------- command line -----------------------------------------------------------------
 
 def build_parser():
@@ -729,6 +757,8 @@ def build_parser():
     p = add("score-round", cmd_score_round, "Planter laptop: count what the other team's tests catch.")
     p.add_argument("--topic", required=True)
     add("reveal", cmd_reveal, "Push your bug log to your team branch (Frame D).")
+    add("sync", cmd_sync, "Update the helper files from the shared repo. "
+                          "Safe: your app and tests are not touched.")
     hidden = sub.add_parser("_run")
     hidden.add_argument("tests_dir")
     hidden.add_argument("out_file")

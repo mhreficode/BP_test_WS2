@@ -9,21 +9,29 @@ Use this in PLANT. The team plants 2 bugs in the topic they own this round.
 
 ## Steps
 
+Plant one bug at a time. Finish bug 1 (change, then log-bug) before you start bug 2.
+
 1. Check the phase and topic with `python3 arena/arena.py status`. The topic must be one the team plants.
 2. Ask: "What kind of mistake do you want to plant?" Wait for the answer.
-3. If they have no idea, offer 3 ideas. Stay inside the zone of this topic only (between `# >>> ZONE Ck` and `# <<< ZONE Ck`). Ideas by kind:
+   If they have no idea, offer 3 ideas. Stay inside the zone of this topic only (between `# >>> ZONE Ck` and `# <<< ZONE Ck`). Ideas by kind:
    - a wrong value (a field is changed, a case is lost),
    - a wrong edge (first page, last page, empty list, limit of 50),
    - a missing check (bad input is let in),
    - a wrong order or a wrong count.
-4. Run `python3 arena/arena.py plant-start Ck`. This makes a sandbox copy. Edit the sandbox only.
-5. Help them make the change. Keep it small: 8 lines at most, in one place.
-6. Ask: "Which request shows the bug?" Write it as `METHOD /path`, for example `GET /colors/BP1001`.
+3. Run `python3 arena/arena.py plant-start Ck`. This makes a sandbox copy. Edit the sandbox only.
+4. Help them make ONE change in ONE place. Keep it small: 8 lines at most.
+5. Ask: "Which request shows the bug?" Write it as `METHOD /path`, for example `GET /colors/BP1001`.
    The answer to that request must differ from the clean answer.
-7. Save it: `python3 arena/arena.py log-bug --topic Ck --note "what it does" --trigger "GET /colors/BP1001"`.
+6. Save it right away: `python3 arena/arena.py log-bug --topic Ck --note "what it does" --trigger "GET /colors/BP1001"`.
    Add `--rule R04` if they know the rule the clean answer follows.
-8. Do it again for bug 2. Pick a different spot. The tool says no to a third bug.
-9. Ask the team to confirm. Then run `python3 arena/arena.py give Ck`.
+   After the save, the sandbox goes back to the clean code. This is normal.
+7. Only now start bug 2. Do steps 2 to 6 again, in a different spot. The tool says no to a third bug.
+   If log-bug says the bug overlaps, pick a different spot. Do not read `.arena/`.
+8. Ask the team to confirm. Then run `python3 arena/arena.py give Ck`.
+
+Rules for planting:
+- Never edit the sandbox twice before a log-bug.
+- Never make bug 2 before bug 1 is saved.
 
 ## Idea seeds per topic
 
