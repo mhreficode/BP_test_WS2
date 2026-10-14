@@ -1,0 +1,602 @@
+[
+  {
+    "id": "B-C2-1",
+    "topic": "C2",
+    "zone": "C2",
+    "rule": "R03",
+    "description": "q length is measured in utf-8 bytes, not characters. An accented q of 33 chars (66 bytes) is refused with 400 BAD_PARAMETER instead of a normal 200 search answer.",
+    "trigger": {
+      "method": "GET",
+      "path": "/colors?q=%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8%C3%A8",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 0,
+        "totalPages": 0,
+        "items": []
+      }
+    },
+    "buggy_answer": {
+      "status": 400,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "error": {
+          "code": "BAD_PARAMETER",
+          "message": "q must be 1 to 64 characters"
+        }
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -35,7 +35,7 @@\n         if value not in FAMILIES:\n             raise ApiError(400, \"BAD_PARAMETER\", \"family must be one of the 11 family names\")\n     elif kind == \"q\":\n-        if len(value) < 1 or len(value) > 64:\n+        if len(value) < 1 or len(value.encode(\"utf-8\")) > 64:\n             raise ApiError(400, \"BAD_PARAMETER\", \"q must be 1 to 64 characters\")\n     return value\n ",
+    "ops": [
+      [
+        37,
+        38,
+        [
+          "        if len(value) < 1 or len(value.encode(\"utf-8\")) > 64:"
+        ]
+      ]
+    ],
+    "round": 1
+  },
+  {
+    "id": "B-C2-2",
+    "topic": "C2",
+    "zone": "C2",
+    "rule": "R02",
+    "description": "Paging skips a page: any page above 1 is bumped by one. Page 2 returns the content of page 3, so one page of colours is never reachable and the echoed page field is wrong.",
+    "trigger": {
+      "method": "GET",
+      "path": "/colors?page=2&pageSize=2",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "page": 2,
+        "pageSize": 2,
+        "total": 37,
+        "totalPages": 19,
+        "items": [
+          {
+            "code": "BP1003",
+            "name": "Crèmewit",
+            "hex": "#F2EBD3",
+            "family": "white",
+            "formulaCode": "INN-1003"
+          },
+          {
+            "code": "BP1004",
+            "name": "Parelgrijs",
+            "hex": "#D8D8D4",
+            "family": "grey",
+            "formulaCode": "INN-1004"
+          }
+        ]
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "page": 3,
+        "pageSize": 2,
+        "total": 37,
+        "totalPages": 19,
+        "items": [
+          {
+            "code": "BP1005",
+            "name": "Lichtgrijs",
+            "hex": "#C9CBCC",
+            "family": "grey",
+            "formulaCode": "INN-1005"
+          },
+          {
+            "code": "BP1006",
+            "name": "Betongrijs",
+            "hex": "#9A9C9B",
+            "family": "grey",
+            "formulaCode": "INN-1006"
+          }
+        ]
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -47,6 +47,8 @@\n         if not RE_INT.match(params[\"page\"]) or int(params[\"page\"]) < 1:\n             raise ApiError(400, \"BAD_PARAMETER\", \"page must be an integer, 1 or more\")\n         page = int(params[\"page\"])\n+        if page > 1:\n+            page += 1\n     if \"pageSize\" in params:\n         raw = params[\"pageSize\"]\n         if not RE_INT.match(raw) or int(raw) < 1:",
+    "ops": [
+      [
+        49,
+        49,
+        [
+          "        if page > 1:",
+          "            page += 1"
+        ]
+      ]
+    ],
+    "round": 1
+  },
+  {
+    "id": "B-C4-1",
+    "topic": "C4",
+    "zone": "C4",
+    "rule": "R05",
+    "description": "A withdrawn colour asked in all lower case is served with 200 instead of 410 COLOR_WITHDRAWN. Upper case still refuses, so only a lower-case test catches it.",
+    "trigger": {
+      "method": "GET",
+      "path": "/colors/bp1038",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 410,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "error": {
+          "code": "COLOR_WITHDRAWN",
+          "message": "Colour bp1038 is withdrawn"
+        }
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "code": "BP1038",
+        "name": "Olijfgroen",
+        "hex": "#7A7A2E",
+        "family": "green",
+        "formulaCode": "INN-1038"
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -8,7 +8,7 @@\n \n def c4_require_active(doc, code):\n     \"\"\"R05: asking for a withdrawn colour directly is refused (410).\"\"\"\n-    if not doc[\"active\"]:\n+    if not doc[\"active\"] and code != code.lower():\n         raise Withdrawn(\"Colour %s is withdrawn\" % code)\n \n ",
+    "ops": [
+      [
+        10,
+        11,
+        [
+          "    if not doc[\"active\"] and code != code.lower():"
+        ]
+      ]
+    ],
+    "round": 2
+  },
+  {
+    "id": "B-C4-2",
+    "topic": "C4",
+    "zone": "C4",
+    "rule": "R06",
+    "description": "Card colours are sorted by position as text, not as a number. A card with ten or more colours lists 1, 10, 11, 12, 2, 3 and so on. Cards with fewer than ten colours look fine.",
+    "trigger": {
+      "method": "GET",
+      "path": "/cards/CARD-01",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "cardId": "CARD-01",
+        "name": "Muur Collectie 2026",
+        "year": 2026,
+        "sku": "SKU-0101",
+        "colorCount": 12,
+        "colors": [
+          {
+            "position": 1,
+            "code": "BP1001",
+            "name": "Wit Gebroken",
+            "hex": "#F4F1E8"
+          },
+          {
+            "position": 2,
+            "code": "BP1002",
+            "name": "Sneeuwwit",
+            "hex": "#FAFAF7"
+          },
+          {
+            "position": 3,
+            "code": "BP1003",
+            "name": "Crèmewit",
+            "hex": "#F2EBD3"
+          },
+          {
+            "position": 4,
+            "code": "BP1004",
+            "name": "Parelgrijs",
+            "hex": "#D8D8D4"
+          },
+          {
+            "position": 5,
+            "code": "BP1005",
+            "name": "Lichtgrijs",
+            "hex": "#C9CBCC"
+          },
+          {
+            "position": 6,
+            "code": "BP1006",
+            "name": "Betongrijs",
+            "hex": "#9A9C9B"
+          },
+          {
+            "position": 7,
+            "code": "BP1007",
+            "name": "Antraciet",
+            "hex": "#3A3D40"
+          },
+          {
+            "position": 8,
+            "code": "BP1008",
+            "name": "Gitzwart",
+            "hex": "#0B0B0C"
+          },
+          {
+            "position": 9,
+            "code": "BP1009",
+            "name": "Delfts Blauw",
+            "hex": "#1F4E9C"
+          },
+          {
+            "position": 10,
+            "code": "BP1010",
+            "name": "Hemelsblauw",
+            "hex": "#8EC5E8"
+          },
+          {
+            "position": 11,
+            "code": "BP1011",
+            "name": "Zeeblauw",
+            "hex": "#2A6F97"
+          },
+          {
+            "position": 12,
+            "code": "BP1012",
+            "name": "Marineblauw",
+            "hex": "#14213D"
+          }
+        ]
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "cardId": "CARD-01",
+        "name": "Muur Collectie 2026",
+        "year": 2026,
+        "sku": "SKU-0101",
+        "colorCount": 12,
+        "colors": [
+          {
+            "position": 1,
+            "code": "BP1001",
+            "name": "Wit Gebroken",
+            "hex": "#F4F1E8"
+          },
+          {
+            "position": 10,
+            "code": "BP1010",
+            "name": "Hemelsblauw",
+            "hex": "#8EC5E8"
+          },
+          {
+            "position": 11,
+            "code": "BP1011",
+            "name": "Zeeblauw",
+            "hex": "#2A6F97"
+          },
+          {
+            "position": 12,
+            "code": "BP1012",
+            "name": "Marineblauw",
+            "hex": "#14213D"
+          },
+          {
+            "position": 2,
+            "code": "BP1002",
+            "name": "Sneeuwwit",
+            "hex": "#FAFAF7"
+          },
+          {
+            "position": 3,
+            "code": "BP1003",
+            "name": "Crèmewit",
+            "hex": "#F2EBD3"
+          },
+          {
+            "position": 4,
+            "code": "BP1004",
+            "name": "Parelgrijs",
+            "hex": "#D8D8D4"
+          },
+          {
+            "position": 5,
+            "code": "BP1005",
+            "name": "Lichtgrijs",
+            "hex": "#C9CBCC"
+          },
+          {
+            "position": 6,
+            "code": "BP1006",
+            "name": "Betongrijs",
+            "hex": "#9A9C9B"
+          },
+          {
+            "position": 7,
+            "code": "BP1007",
+            "name": "Antraciet",
+            "hex": "#3A3D40"
+          },
+          {
+            "position": 8,
+            "code": "BP1008",
+            "name": "Gitzwart",
+            "hex": "#0B0B0C"
+          },
+          {
+            "position": 9,
+            "code": "BP1009",
+            "name": "Delfts Blauw",
+            "hex": "#1F4E9C"
+          }
+        ]
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -27,7 +27,7 @@\n \n def c4_card_entries(card):\n     \"\"\"R06: the colours of a card in the order of position.\"\"\"\n-    return sorted(card[\"colors\"], key=lambda c: c[\"position\"])\n+    return sorted(card[\"colors\"], key=lambda c: str(c[\"position\"]))\n \n \n def c4_card_count(entries):",
+    "ops": [
+      [
+        29,
+        30,
+        [
+          "    return sorted(card[\"colors\"], key=lambda c: str(c[\"position\"]))"
+        ]
+      ]
+    ],
+    "round": 2
+  },
+  {
+    "id": "B-C6-1",
+    "topic": "C6",
+    "zone": "C6",
+    "rule": "R04",
+    "description": "The X-Seed-Version header reports the old seed version 2026.09.1 until a POST /admin/reset happens. After a reset it is right again, so any test that resets first sees nothing wrong.",
+    "trigger": {
+      "method": "GET",
+      "path": "/health",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "status": "ok",
+        "version": "1.0.0",
+        "seedVersion": "2026.10.1"
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.09.1",
+      "body": {
+        "status": "ok",
+        "version": "1.0.0",
+        "seedVersion": "2026.10.1"
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -22,6 +22,7 @@\n \n def c6_reset_db(current, fresh):\n     \"\"\"POST /admin/reset brings the data back to the seed baseline.\"\"\"\n+    c6_seed_header.synced = True\n     return fresh\n \n \n@@ -32,4 +33,4 @@\n \n def c6_seed_header():\n     \"\"\"The X-Seed-Version header of every answer.\"\"\"\n-    return SEED_VERSION\n+    return SEED_VERSION if getattr(c6_seed_header, \"synced\", False) else \"2026.09.1\"",
+    "ops": [
+      [
+        24,
+        24,
+        [
+          "    c6_seed_header.synced = True"
+        ]
+      ],
+      [
+        34,
+        35,
+        [
+          "    return SEED_VERSION if getattr(c6_seed_header, \"synced\", False) else \"2026.09.1\""
+        ]
+      ]
+    ],
+    "round": 3
+  },
+  {
+    "id": "B-C6-2",
+    "topic": "C6",
+    "zone": "C6",
+    "rule": "R06",
+    "description": "The very first card colour served after the server starts comes back with lower case hex, for example #a1b2c3. Every later one is right. R06 says card hex is # plus 6 capital hex digits.",
+    "trigger": {
+      "method": "GET",
+      "path": "/cards/CARD-01",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "cardId": "CARD-01",
+        "name": "Muur Collectie 2026",
+        "year": 2026,
+        "sku": "SKU-0101",
+        "colorCount": 12,
+        "colors": [
+          {
+            "position": 1,
+            "code": "BP1001",
+            "name": "Wit Gebroken",
+            "hex": "#F4F1E8"
+          },
+          {
+            "position": 2,
+            "code": "BP1002",
+            "name": "Sneeuwwit",
+            "hex": "#FAFAF7"
+          },
+          {
+            "position": 3,
+            "code": "BP1003",
+            "name": "Crèmewit",
+            "hex": "#F2EBD3"
+          },
+          {
+            "position": 4,
+            "code": "BP1004",
+            "name": "Parelgrijs",
+            "hex": "#D8D8D4"
+          },
+          {
+            "position": 5,
+            "code": "BP1005",
+            "name": "Lichtgrijs",
+            "hex": "#C9CBCC"
+          },
+          {
+            "position": 6,
+            "code": "BP1006",
+            "name": "Betongrijs",
+            "hex": "#9A9C9B"
+          },
+          {
+            "position": 7,
+            "code": "BP1007",
+            "name": "Antraciet",
+            "hex": "#3A3D40"
+          },
+          {
+            "position": 8,
+            "code": "BP1008",
+            "name": "Gitzwart",
+            "hex": "#0B0B0C"
+          },
+          {
+            "position": 9,
+            "code": "BP1009",
+            "name": "Delfts Blauw",
+            "hex": "#1F4E9C"
+          },
+          {
+            "position": 10,
+            "code": "BP1010",
+            "name": "Hemelsblauw",
+            "hex": "#8EC5E8"
+          },
+          {
+            "position": 11,
+            "code": "BP1011",
+            "name": "Zeeblauw",
+            "hex": "#2A6F97"
+          },
+          {
+            "position": 12,
+            "code": "BP1012",
+            "name": "Marineblauw",
+            "hex": "#14213D"
+          }
+        ]
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "cardId": "CARD-01",
+        "name": "Muur Collectie 2026",
+        "year": 2026,
+        "sku": "SKU-0101",
+        "colorCount": 12,
+        "colors": [
+          {
+            "position": 1,
+            "code": "BP1001",
+            "name": "Wit Gebroken",
+            "hex": "#f4f1e8"
+          },
+          {
+            "position": 2,
+            "code": "BP1002",
+            "name": "Sneeuwwit",
+            "hex": "#FAFAF7"
+          },
+          {
+            "position": 3,
+            "code": "BP1003",
+            "name": "Crèmewit",
+            "hex": "#F2EBD3"
+          },
+          {
+            "position": 4,
+            "code": "BP1004",
+            "name": "Parelgrijs",
+            "hex": "#D8D8D4"
+          },
+          {
+            "position": 5,
+            "code": "BP1005",
+            "name": "Lichtgrijs",
+            "hex": "#C9CBCC"
+          },
+          {
+            "position": 6,
+            "code": "BP1006",
+            "name": "Betongrijs",
+            "hex": "#9A9C9B"
+          },
+          {
+            "position": 7,
+            "code": "BP1007",
+            "name": "Antraciet",
+            "hex": "#3A3D40"
+          },
+          {
+            "position": 8,
+            "code": "BP1008",
+            "name": "Gitzwart",
+            "hex": "#0B0B0C"
+          },
+          {
+            "position": 9,
+            "code": "BP1009",
+            "name": "Delfts Blauw",
+            "hex": "#1F4E9C"
+          },
+          {
+            "position": 10,
+            "code": "BP1010",
+            "name": "Hemelsblauw",
+            "hex": "#8EC5E8"
+          },
+          {
+            "position": 11,
+            "code": "BP1011",
+            "name": "Zeeblauw",
+            "hex": "#2A6F97"
+          },
+          {
+            "position": 12,
+            "code": "BP1012",
+            "name": "Marineblauw",
+            "hex": "#14213D"
+          }
+        ]
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -17,6 +17,9 @@\n \n def c6_card_hex(hexval):\n     \"\"\"R06: a card shows hex in the same format as /colors: # and 6 capital hex digits.\"\"\"\n+    if not getattr(c6_card_hex, \"warm\", False):\n+        c6_card_hex.warm = True\n+        return hexval.lower()\n     return hexval\n \n ",
+    "ops": [
+      [
+        19,
+        19,
+        [
+          "    if not getattr(c6_card_hex, \"warm\", False):",
+          "        c6_card_hex.warm = True",
+          "        return hexval.lower()"
+        ]
+      ]
+    ],
+    "round": 3
+  }
+]
