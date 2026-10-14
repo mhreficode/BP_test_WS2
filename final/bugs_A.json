@@ -1,0 +1,545 @@
+[
+  {
+    "id": "A-C1-1",
+    "topic": "C1",
+    "zone": "C1",
+    "rule": "R04",
+    "description": "hex loses its leading zero(s) after # in c1_serve_color; hits BP1008 and BP1036 only",
+    "trigger": {
+      "method": "GET",
+      "path": "/colors/BP1008",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "code": "BP1008",
+        "name": "Gitzwart",
+        "hex": "#0B0B0C",
+        "family": "black",
+        "formulaCode": "INN-1008"
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "code": "BP1008",
+        "name": "Gitzwart",
+        "hex": "#B0B0C",
+        "family": "black",
+        "formulaCode": "INN-1008"
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -7,10 +7,13 @@\n \n def c1_serve_color(doc):\n     \"\"\"R04: a colour as served. Internal fields (_id, _sync) never leave the lib.\"\"\"\n+    hexval = doc.get(\"hex\")\n+    if hexval:\n+        hexval = \"#\" + hexval[1:].lstrip(\"0\")\n     return {\n         \"code\": doc[\"code\"],\n         \"name\": doc[\"name\"],\n-        \"hex\": doc.get(\"hex\"),\n+        \"hex\": hexval,\n         \"family\": doc[\"family\"],\n         \"formulaCode\": doc[\"formulaCode\"],\n     }",
+    "ops": [
+      [
+        9,
+        9,
+        [
+          "    hexval = doc.get(\"hex\")",
+          "    if hexval:",
+          "        hexval = \"#\" + hexval[1:].lstrip(\"0\")"
+        ]
+      ],
+      [
+        12,
+        13,
+        [
+          "        \"hex\": hexval,"
+        ]
+      ]
+    ],
+    "round": 1
+  },
+  {
+    "id": "A-C1-2",
+    "topic": "C1",
+    "zone": "C1",
+    "rule": "R04",
+    "description": "name loses accents (è/é become e) via a second name key at the end of the c1_serve_color dict; hits BP1003 Crèmewit",
+    "trigger": {
+      "method": "GET",
+      "path": "/colors/BP1003",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "code": "BP1003",
+        "name": "Crèmewit",
+        "hex": "#F2EBD3",
+        "family": "white",
+        "formulaCode": "INN-1003"
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "code": "BP1003",
+        "name": "Cremewit",
+        "hex": "#F2EBD3",
+        "family": "white",
+        "formulaCode": "INN-1003"
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -13,4 +13,5 @@\n         \"hex\": doc.get(\"hex\"),\n         \"family\": doc[\"family\"],\n         \"formulaCode\": doc[\"formulaCode\"],\n+        \"name\": doc[\"name\"].replace(\"è\", \"e\").replace(\"é\", \"e\"),\n     }",
+    "ops": [
+      [
+        15,
+        15,
+        [
+          "        \"name\": doc[\"name\"].replace(\"è\", \"e\").replace(\"é\", \"e\"),"
+        ]
+      ]
+    ],
+    "round": 1
+  },
+  {
+    "id": "A-C3-1",
+    "topic": "C3",
+    "zone": "C3",
+    "rule": "R02",
+    "description": "c3_envelope cuts the last page one item short when it is not full (end = total - 1); full pages and exact multiples unaffected; /colors page 4 shows 6 of 7",
+    "trigger": {
+      "method": "GET",
+      "path": "/colors?page=4",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "page": 4,
+        "pageSize": 10,
+        "total": 37,
+        "totalPages": 4,
+        "items": [
+          {
+            "code": "BP1031",
+            "name": "Walnoot",
+            "hex": "#5C4033",
+            "family": "brown",
+            "formulaCode": "INN-1031"
+          },
+          {
+            "code": "BP1032",
+            "name": "Koffiebruin",
+            "hex": "#3E2A21",
+            "family": "brown",
+            "formulaCode": "INN-1032"
+          },
+          {
+            "code": "BP1033",
+            "name": "Linnen",
+            "hex": "#E6DFCF",
+            "family": "white",
+            "formulaCode": "INN-1033"
+          },
+          {
+            "code": "BP1034",
+            "name": "Kiezelgrijs",
+            "hex": "#B1ADA3",
+            "family": "grey",
+            "formulaCode": "INN-1034"
+          },
+          {
+            "code": "BP1035",
+            "name": "Leigrijs",
+            "hex": "#5F6B73",
+            "family": "grey",
+            "formulaCode": "INN-1035"
+          },
+          {
+            "code": "BP1036",
+            "name": "Petrolblauw",
+            "hex": "#0F5C6E",
+            "family": "blue",
+            "formulaCode": "INN-1036"
+          },
+          {
+            "code": "BP1037",
+            "name": "Munt",
+            "hex": "#B8E0D2",
+            "family": "green",
+            "formulaCode": "INN-1037"
+          }
+        ]
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "page": 4,
+        "pageSize": 10,
+        "total": 37,
+        "totalPages": 4,
+        "items": [
+          {
+            "code": "BP1031",
+            "name": "Walnoot",
+            "hex": "#5C4033",
+            "family": "brown",
+            "formulaCode": "INN-1031"
+          },
+          {
+            "code": "BP1032",
+            "name": "Koffiebruin",
+            "hex": "#3E2A21",
+            "family": "brown",
+            "formulaCode": "INN-1032"
+          },
+          {
+            "code": "BP1033",
+            "name": "Linnen",
+            "hex": "#E6DFCF",
+            "family": "white",
+            "formulaCode": "INN-1033"
+          },
+          {
+            "code": "BP1034",
+            "name": "Kiezelgrijs",
+            "hex": "#B1ADA3",
+            "family": "grey",
+            "formulaCode": "INN-1034"
+          },
+          {
+            "code": "BP1035",
+            "name": "Leigrijs",
+            "hex": "#5F6B73",
+            "family": "grey",
+            "formulaCode": "INN-1035"
+          },
+          {
+            "code": "BP1036",
+            "name": "Petrolblauw",
+            "hex": "#0F5C6E",
+            "family": "blue",
+            "formulaCode": "INN-1036"
+          }
+        ]
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -23,5 +23,8 @@\n     total = len(rows)\n     pages = -(-total // size)\n     offset = (page - 1) * size\n+    end = offset + size\n+    if end > total:\n+        end = total - 1\n     return {\"page\": page, \"pageSize\": size, \"total\": total, \"totalPages\": pages,\n-            \"items\": rows[offset:offset + size]}\n+            \"items\": rows[offset:end]}",
+    "ops": [
+      [
+        25,
+        25,
+        [
+          "    end = offset + size",
+          "    if end > total:",
+          "        end = total - 1"
+        ]
+      ],
+      [
+        26,
+        27,
+        [
+          "            \"items\": rows[offset:end]}"
+        ]
+      ]
+    ],
+    "round": 2
+  },
+  {
+    "id": "A-C3-2",
+    "topic": "C3",
+    "zone": "C3",
+    "rule": "R10",
+    "description": "c3_search lowers only the first letter of the name, so a capital inside the name (Wit Gebroken, Delfts Blauw, Oranje Nassau) is never matched: q=gebroken and q=nassau find nothing, q=blauw gives 4 instead of 5",
+    "trigger": {
+      "method": "GET",
+      "path": "/colors?q=gebroken",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 1,
+        "totalPages": 1,
+        "items": [
+          {
+            "code": "BP1001",
+            "name": "Wit Gebroken",
+            "hex": "#F4F1E8",
+            "family": "white",
+            "formulaCode": "INN-1001"
+          }
+        ]
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "page": 1,
+        "pageSize": 10,
+        "total": 0,
+        "totalPages": 0,
+        "items": []
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -12,7 +12,7 @@\n     for doc in docs:\n         if family is not None and doc[\"family\"] != family:\n             continue\n-        if q is not None and q.lower() not in doc[\"name\"].lower():\n+        if q is not None and q.lower() not in doc[\"name\"][:1].lower() + doc[\"name\"][1:]:\n             continue\n         rows.append(doc)\n     return rows",
+    "ops": [
+      [
+        14,
+        15,
+        [
+          "        if q is not None and q.lower() not in doc[\"name\"][:1].lower() + doc[\"name\"][1:]:"
+        ]
+      ]
+    ],
+    "round": 2
+  },
+  {
+    "id": "A-C5-1",
+    "topic": "C5",
+    "zone": "C5",
+    "rule": "R09",
+    "description": "c5_error_body adds an extra 'detail' field inside error on every error body; the body is no longer exactly {error:{code,message}}",
+    "trigger": {
+      "method": "GET",
+      "path": "/colors/BP9999",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 404,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Colour BP9999 not found"
+        }
+      }
+    },
+    "buggy_answer": {
+      "status": 404,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "error": {
+          "code": "NOT_FOUND",
+          "message": "Colour BP9999 not found",
+          "detail": "Colour BP9999 not found"
+        }
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -4,7 +4,7 @@\n \n def c5_error_body(code, message):\n     \"\"\"R09: every error has the same body.\"\"\"\n-    return {\"error\": {\"code\": code, \"message\": message}}\n+    return {\"error\": {\"code\": code, \"message\": message, \"detail\": message}}\n \n \n def c5_map_error(exc):",
+    "ops": [
+      [
+        6,
+        7,
+        [
+          "    return {\"error\": {\"code\": code, \"message\": message, \"detail\": message}}"
+        ]
+      ]
+    ],
+    "round": 3
+  },
+  {
+    "id": "A-C5-2",
+    "topic": "C5",
+    "zone": "C5",
+    "rule": "R06",
+    "description": "c5_card_head serves year as text taken from the last 4 chars of the card name when they are digits: CARD-01 and CARD-03 give '2026' (string), CARD-02 keeps the integer so the pact PI-4 passes",
+    "trigger": {
+      "method": "GET",
+      "path": "/cards/CARD-01",
+      "body": ""
+    },
+    "clean_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "cardId": "CARD-01",
+        "name": "Muur Collectie 2026",
+        "year": 2026,
+        "sku": "SKU-0101",
+        "colorCount": 12,
+        "colors": [
+          {
+            "position": 1,
+            "code": "BP1001",
+            "name": "Wit Gebroken",
+            "hex": "#F4F1E8"
+          },
+          {
+            "position": 2,
+            "code": "BP1002",
+            "name": "Sneeuwwit",
+            "hex": "#FAFAF7"
+          },
+          {
+            "position": 3,
+            "code": "BP1003",
+            "name": "Crèmewit",
+            "hex": "#F2EBD3"
+          },
+          {
+            "position": 4,
+            "code": "BP1004",
+            "name": "Parelgrijs",
+            "hex": "#D8D8D4"
+          },
+          {
+            "position": 5,
+            "code": "BP1005",
+            "name": "Lichtgrijs",
+            "hex": "#C9CBCC"
+          },
+          {
+            "position": 6,
+            "code": "BP1006",
+            "name": "Betongrijs",
+            "hex": "#9A9C9B"
+          },
+          {
+            "position": 7,
+            "code": "BP1007",
+            "name": "Antraciet",
+            "hex": "#3A3D40"
+          },
+          {
+            "position": 8,
+            "code": "BP1008",
+            "name": "Gitzwart",
+            "hex": "#0B0B0C"
+          },
+          {
+            "position": 9,
+            "code": "BP1009",
+            "name": "Delfts Blauw",
+            "hex": "#1F4E9C"
+          },
+          {
+            "position": 10,
+            "code": "BP1010",
+            "name": "Hemelsblauw",
+            "hex": "#8EC5E8"
+          },
+          {
+            "position": 11,
+            "code": "BP1011",
+            "name": "Zeeblauw",
+            "hex": "#2A6F97"
+          },
+          {
+            "position": 12,
+            "code": "BP1012",
+            "name": "Marineblauw",
+            "hex": "#14213D"
+          }
+        ]
+      }
+    },
+    "buggy_answer": {
+      "status": 200,
+      "seedVersion": "2026.10.1",
+      "body": {
+        "cardId": "CARD-01",
+        "name": "Muur Collectie 2026",
+        "year": "2026",
+        "sku": "SKU-0101",
+        "colorCount": 12,
+        "colors": [
+          {
+            "position": 1,
+            "code": "BP1001",
+            "name": "Wit Gebroken",
+            "hex": "#F4F1E8"
+          },
+          {
+            "position": 2,
+            "code": "BP1002",
+            "name": "Sneeuwwit",
+            "hex": "#FAFAF7"
+          },
+          {
+            "position": 3,
+            "code": "BP1003",
+            "name": "Crèmewit",
+            "hex": "#F2EBD3"
+          },
+          {
+            "position": 4,
+            "code": "BP1004",
+            "name": "Parelgrijs",
+            "hex": "#D8D8D4"
+          },
+          {
+            "position": 5,
+            "code": "BP1005",
+            "name": "Lichtgrijs",
+            "hex": "#C9CBCC"
+          },
+          {
+            "position": 6,
+            "code": "BP1006",
+            "name": "Betongrijs",
+            "hex": "#9A9C9B"
+          },
+          {
+            "position": 7,
+            "code": "BP1007",
+            "name": "Antraciet",
+            "hex": "#3A3D40"
+          },
+          {
+            "position": 8,
+            "code": "BP1008",
+            "name": "Gitzwart",
+            "hex": "#0B0B0C"
+          },
+          {
+            "position": 9,
+            "code": "BP1009",
+            "name": "Delfts Blauw",
+            "hex": "#1F4E9C"
+          },
+          {
+            "position": 10,
+            "code": "BP1010",
+            "name": "Hemelsblauw",
+            "hex": "#8EC5E8"
+          },
+          {
+            "position": 11,
+            "code": "BP1011",
+            "name": "Zeeblauw",
+            "hex": "#2A6F97"
+          },
+          {
+            "position": 12,
+            "code": "BP1012",
+            "name": "Marineblauw",
+            "hex": "#14213D"
+          }
+        ]
+      }
+    },
+    "patch": "--- clean\n+++ bug\n@@ -22,10 +22,11 @@\n \n def c5_card_head(card, count):\n     \"\"\"The card answer without its colours: id, name, year, sku, colorCount.\"\"\"\n+    tail = card[\"name\"][-4:]\n     return {\n         \"cardId\": card[\"cardId\"],\n         \"name\": card[\"name\"],\n-        \"year\": card[\"year\"],\n+        \"year\": tail if tail.isdigit() else card[\"year\"],   # collection year from the name\n         \"sku\": card[\"sku\"],\n         \"colorCount\": count,\n     }",
+    "ops": [
+      [
+        24,
+        24,
+        [
+          "    tail = card[\"name\"][-4:]"
+        ]
+      ],
+      [
+        27,
+        28,
+        [
+          "        \"year\": tail if tail.isdigit() else card[\"year\"],   # collection year from the name"
+        ]
+      ]
+    ],
+    "round": 3
+  }
+]
